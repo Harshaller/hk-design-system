@@ -19,9 +19,9 @@ export function Layout({ activeSubSection }) {
   return (
     <div>
       <div className="mb-10">
-        <div className="flex items-center gap-3 mb-4">
-          <ViewColumnsIcon className="h-8 w-8 text-primary-600" />
-          <div>
+        <div className="flex items-start gap-3 mb-4">
+          <ViewColumnsIcon className="h-8 w-8 text-primary-600 mt-1 flex-shrink-0" />
+          <div className="flex-1">
             <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
               Layout - {activeSubSection}
             </h1>
@@ -61,6 +61,17 @@ function GridSection() {
               <div className="bg-primary-500 h-20 rounded flex items-center justify-center text-white">2</div>
               <div className="bg-primary-500 h-20 rounded flex items-center justify-center text-white">3</div>
               <div className="bg-primary-500 h-20 rounded flex items-center justify-center text-white">4</div>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">Grid with Spanning</h3>
+            <code className="text-sm font-mono text-primary-600 dark:text-primary-400 mb-2 block">col-span-2</code>
+            <div className="grid grid-cols-3 gap-4 bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
+              <div className="bg-primary-500 h-20 rounded flex items-center justify-center text-white col-span-2">Span 2</div>
+              <div className="bg-primary-500 h-20 rounded flex items-center justify-center text-white">1</div>
+              <div className="bg-primary-500 h-20 rounded flex items-center justify-center text-white">1</div>
+              <div className="bg-primary-500 h-20 rounded flex items-center justify-center text-white">1</div>
             </div>
           </div>
         </div>
@@ -105,6 +116,16 @@ function FlexboxSection() {
               <div className="bg-primary-500 h-16 w-16 rounded flex items-center justify-center text-white">3</div>
             </div>
           </div>
+
+          <div>
+            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">Flex Align Center</h3>
+            <code className="text-sm font-mono text-primary-600 dark:text-primary-400 mb-2 block">flex items-center gap-4</code>
+            <div className="flex items-center gap-4 bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
+              <div className="bg-primary-500 h-20 w-20 rounded flex items-center justify-center text-white">Tall</div>
+              <div className="bg-primary-500 h-12 w-12 rounded flex items-center justify-center text-white">Small</div>
+              <div className="bg-primary-500 h-16 w-16 rounded flex items-center justify-center text-white">Medium</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -121,7 +142,7 @@ function ContainerSection() {
           <div>
             <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">Default Container</h3>
             <code className="text-sm font-mono text-primary-600 dark:text-primary-400 mb-2 block">container mx-auto</code>
-            <div className="container mx-auto bg-primary-100 dark:bg-primary-900/30 p-4 rounded-lg">
+            <div className="container mx-auto bg-primary-100 dark:bg-primary-900/30 p-4 rounded-lg border border-primary-200 dark:border-primary-800">
               <p className="text-gray-700 dark:text-gray-300">This container centers content with max-width based on responsive breakpoints.</p>
             </div>
           </div>
@@ -129,7 +150,7 @@ function ContainerSection() {
           <div>
             <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">Full Width Container</h3>
             <code className="text-sm font-mono text-primary-600 dark:text-primary-400 mb-2 block">w-full</code>
-            <div className="w-full bg-primary-100 dark:bg-primary-900/30 p-4 rounded-lg">
+            <div className="w-full bg-primary-100 dark:bg-primary-900/30 p-4 rounded-lg border border-primary-200 dark:border-primary-800">
               <p className="text-gray-700 dark:text-gray-300">This container spans the full width of its parent.</p>
             </div>
           </div>
@@ -137,8 +158,16 @@ function ContainerSection() {
           <div>
             <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">Max Width Container</h3>
             <code className="text-sm font-mono text-primary-600 dark:text-primary-400 mb-2 block">max-w-2xl mx-auto</code>
-            <div className="max-w-2xl mx-auto bg-primary-100 dark:bg-primary-900/30 p-4 rounded-lg">
+            <div className="max-w-2xl mx-auto bg-primary-100 dark:bg-primary-900/30 p-4 rounded-lg border border-primary-200 dark:border-primary-800">
               <p className="text-gray-700 dark:text-gray-300">This container has max width with auto margins.</p>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">With Padding Container</h3>
+            <code className="text-sm font-mono text-primary-600 dark:text-primary-400 mb-2 block">container mx-auto px-4</code>
+            <div className="container mx-auto px-4 bg-primary-100 dark:bg-primary-900/30 p-4 rounded-lg border border-primary-200 dark:border-primary-800">
+              <p className="text-gray-700 dark:text-gray-300">Container with horizontal padding for better spacing on mobile.</p>
             </div>
           </div>
         </div>

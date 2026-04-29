@@ -16,8 +16,9 @@ import {
   ChartBarIcon,
   EyeIcon,
   PaintBrushIcon,
-  ArrowsRightLeftIcon, // Alternative for spacing
-  Squares2X2Icon, // Alternative for layout
+  ArrowsRightLeftIcon,
+  Squares2X2Icon,
+  CodeBracketIcon, // Add this for Tokens icon
 } from '@heroicons/react/24/solid';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 
@@ -117,6 +118,7 @@ export function Sidebar({ activeSection, setActiveSection }) {
       PaintBrushIcon,
       ArrowsRightLeftIcon,
       Squares2X2Icon,
+      CodeBracketIcon, // Add Token icon mapping
     };
     
     // If icon is a string, get from map, otherwise it's already a component

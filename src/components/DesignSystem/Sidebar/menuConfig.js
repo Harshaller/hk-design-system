@@ -12,6 +12,7 @@ import {
   ArrowPathIcon,
   ArrowsPointingOutIcon,
   ViewColumnsIcon,
+  CodeBracketIcon,  // Added for Tokens
 } from '@heroicons/react/24/solid';
 
 export const menuItems = [
@@ -61,6 +62,15 @@ export const menuItems = [
       { name: 'Grid', icon: ViewColumnsIcon, section: 'Layout-Grid' },
       { name: 'Flexbox', icon: ViewColumnsIcon, section: 'Layout-Flexbox' },
       { name: 'Container', icon: ViewColumnsIcon, section: 'Layout-Container' }
+    ] 
+  },
+  { 
+    id: 6,  // New Tokens section
+    name: 'Tokens', 
+    icon: CodeBracketIcon,
+    subsections: [
+      { name: 'Export', icon: CodeBracketIcon, section: 'Tokens-Export' },
+      { name: 'Usage Guide', icon: CodeBracketIcon, section: 'Tokens-Usage' }
     ] 
   }
 ];

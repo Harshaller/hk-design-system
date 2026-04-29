@@ -10,11 +10,13 @@ import { Buttons } from './components/DesignSystem/ContentArea/Buttons';
 import { Dashboard } from './components/DesignSystem/ContentArea/Dashboard';
 import { Spacing } from './components/DesignSystem/ContentArea/Spacing';
 import { Layout } from './components/DesignSystem/ContentArea/Layout';
+import { TokensExport } from './components/DesignSystem/ContentArea/TokensExport';
+import { TokensUsage } from './components/DesignSystem/ContentArea/TokensUsage';
 import { ThemeToggle } from './components/DesignSystem/ThemeToggle';
 import { useTheme } from './hooks/useTheme';
 
 function App() {
-  const [activeSection, setActiveSection] = useState('Dashboard'); // Default to Dashboard
+  const [activeSection, setActiveSection] = useState('Dashboard');
   const { theme, toggleTheme } = useTheme();
   
   const renderContent = () => {
@@ -43,13 +45,20 @@ function App() {
       case 'Layout-Flexbox':
       case 'Layout-Container':
         return <Layout activeSubSection={activeSection.split('-')[1]} />;
+      case 'Tokens-Export':
+        return <TokensExport />;
+      case 'Tokens-Usage':
+        return <TokensUsage />;
       default:
-        return <Dashboard />; // Fallback to Dashboard
+        return <Dashboard />;
     }
   };
   
   const getPageTitle = () => {
     const [section, subSection] = activeSection.split('-');
+    if (section === 'Tokens') {
+      return `Design Tokens - ${subSection || 'Management'}`;
+    }
     return subSection ? `${section} - ${subSection}` : section;
   };
   
@@ -81,4 +90,3 @@ function App() {
 }
 
 export default App;
-
